@@ -1,0 +1,114 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #04471C;
+    border-radius: 1px solid black;
+    /* background-color: black; */
+
+}
+.title{
+    /* border:2px solid red; */
+    text-align: center;
+    background-color:#020202;
+    color:rgba(232, 202, 202, 0.627);
+    height: 10vh;
+    width: 100wh;
+    font-size: 2rem;
+    line-height: 3rem;
+}
+.gameContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game{
+    display: flex;
+    background-color: #058C42;
+    height: 400px;
+    width: 600px;
+    border-radius: 0.2rem;
+    box-shadow:  5px 10px 6px 6px rgba(0, 0, 0, 0.5);
+}
+
+.buttons{
+    display: none;
+}
+.scores{
+    display: none;
+    justify-content: space-evenly;
+    /* border: 2px solid red; */
+    background-color: black;
+    height: 10vh;
+}
+.score,.highScore{
+    color: grey;
+    /* border: 2px solid red; */
+    text-align: left;
+    margin-right: 1rem;
+    padding-right: 1rem;
+    font-size: 2rem;
+}
+@media (max-width:400px) {
+    body{
+        background-color: black;
+    }
+    /* .gameContainer{
+        border:2px solid red;
+    } */
+    .game{
+        height: 400px;
+        width:300px;
+    }
+    .title{
+        font-size: 2rem;
+        text-align: center;
+    }
+    .scores{
+        display: flex;
+        justify-content: space-between;
+    }
+    .score,.highScore{
+        color: grey;
+        /* border: 2px solid red; */
+        text-align: left;
+        margin-right: 1rem;
+        padding-right: 1rem;
+        font-size: 1.3rem;
+    }
+    .buttons{
+        margin-top:2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .buttons .button{
+        width: 6rem;
+        height: 3rem;
+        position: absolute;
+        border-radius: 0.8rem;
+        background-color:grey;
+        font-size: 1rem;
+    }
+    .buttons #arrowUp{
+        top:85%;
+        left: 35%;
+    }
+    .buttons #arrowDown{
+        top: 92%;
+        left: 35%;
+    }
+    .buttons #arrowLeft{
+        top: 92%;
+        left: 7%;
+    }
+    .buttons #arrowRight{
+        top: 92%;
+        left: 63%;
+    }
+}
