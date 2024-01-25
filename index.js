@@ -106,7 +106,7 @@ function drawHead(ctx,headPosition,width,height,velocity){
 function drawGrid(ctx,width,height,multiplyerX,multiplyerY){
     for(let  i=0;i<multiplyerX;i++){
         for(let j=0;j<multiplyerY;j++){
-            ctx.strokeStyle=`rgba(119,226,119,0.1)`;
+            ctx.strokeStyle=`rgba(119,226,119,0.2)`;
             ctx.strokeRect(i*width,j*height,30,30);
         }
     }
