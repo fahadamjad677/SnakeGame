@@ -103,27 +103,8 @@ function drawHead(ctx,headPosition,width,height,velocity){
     headPosition.y=headPosition.y +((velocity.y)*height);
     roundedRect(ctx,headPosition,width,height,snakeRadius+1,"red");
 }
-function drawGrid(ctx,width,height,multiplyerX,multiplyerY){
-    for(let  i=0;i<multiplyerX;i++){
-        for(let j=0;j<multiplyerY;j++){
-            ctx.strokeStyle=`rgba(119,226,119,0.2)`;
-            ctx.strokeRect(i*width,j*height,30,30);
-        }
-    }
-}
-function clearGrid(ctx,width,height,multiplyerX,multiplyerY){
-    for(let  i=0;i<multiplyerX;i++){
-        for(let j=0;j<multiplyerY;j++){
-           ctx.clearRect(i*width,j*height,30,30);
-        }
-    }
-}
-function drawFoodSame(ctx,foodPosition,width,height){
-    let requiredPosition={...foodPosition};
-    requiredPosition.x+=foodPositionIncrement.x;
-    requiredPosition.y+=foodPositionIncrement.y;
-    roundedRect(ctx,requiredPosition,width-5,height-5,foodRadius,"yellow");
-}
+
+// }
 function drawFood(ctx,foodPosition,width,height,headPosition,bodyPosition,multiplyerX,multiplyerY){
     foodPosition.x=(Math.floor((Math.random()*multiplyerX))*width);
     foodPosition.y=(Math.floor((Math.random()*multiplyerY))*height);
@@ -330,7 +311,6 @@ let game=setInterval(()=>{
         clearElement(ctx,foodPosition,width,height);
         drawFood(ctx,foodPosition,width,height,headPosition,bodyPosition,multiplyerX,multiplyerY);
      }
-     clearGrid(ctx,width,height,multiplyerX,multiplyerY);
         clearElement(ctx,headPosition,width,height);
          // Clearing all body elements to re-render at the next location
      for(let i=bodyPosition.length-1;i>=0;i--){
@@ -346,8 +326,6 @@ let game=setInterval(()=>{
     }
         
     update();
-    drawGrid(ctx,width,height,multiplyerX,multiplyerY);
-    drawFoodSame(ctx,foodPosition,width,height);
     drawHead(ctx,headPosition,width,height,velocity);
     if(gameOver(headPosition,bodyPosition)){
             playSound(gameOverSound);
