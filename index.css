@@ -94,6 +94,7 @@ body{
         border-radius: 0.8rem;
         background-color:grey;
         font-size: 1rem;
+        text-align: center;
     }
     .buttons #arrowUp{
         top:85%;
